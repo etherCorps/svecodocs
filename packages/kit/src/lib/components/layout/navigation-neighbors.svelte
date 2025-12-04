@@ -12,9 +12,11 @@
 {#if navigationNeighbors}
 	<div class="mt-6 flex w-full flex-col gap-2 lg:flex-row">
 		{#if navigationNeighbors?.previous}
+			{@const isExternalLink = !navigationNeighbors.previous.href.startsWith("/")}
 			<Button
 				variant="subtle"
 				href={navigationNeighbors.previous.href}
+				target={isExternalLink ? "_blank" : undefined}
 				class="flex h-fit w-full flex-col items-start gap-2 rounded-lg p-4 text-sm"
 			>
 				<div class="inline-flex items-center gap-1.5 font-medium">
@@ -28,7 +30,7 @@
 						stroke-width="2"
 						stroke-linecap="round"
 						stroke-linejoin="round"
-						class="lucide -mx-1 size-4 shrink-0 rtl:rotate-180"
+						class="-mx-1 size-4 shrink-0 rtl:rotate-180"
 						><path d="m15 18-6-6 6-6"></path></svg
 					>
 					<p>{navigationNeighbors.previous.title}</p>
@@ -39,9 +41,11 @@
 			</Button>
 		{/if}
 		{#if navigationNeighbors?.next}
+			{@const isExternalLink = !navigationNeighbors.next.href.startsWith("/")}
 			<Button
 				variant="subtle"
 				href={navigationNeighbors.next.href}
+				target={isExternalLink ? "_blank" : undefined}
 				class="flex h-fit w-full flex-col items-end gap-2 rounded-lg p-4 text-end text-sm"
 			>
 				<div class="inline-flex flex-row-reverse items-center gap-1.5 font-medium">
@@ -55,7 +59,7 @@
 						stroke-width="2"
 						stroke-linecap="round"
 						stroke-linejoin="round"
-						class="lucide -mx-1 size-4 shrink-0 rtl:rotate-180"
+						class="-mx-1 size-4 shrink-0 rtl:rotate-180"
 						><path d="m9 18 6-6-6-6"></path></svg
 					>
 					<p>{navigationNeighbors.next.title}</p>
