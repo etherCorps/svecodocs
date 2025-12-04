@@ -4,7 +4,7 @@
 	import { useSiteConfig } from "$lib/hooks/use-site-config.svelte.js";
 
 	const year = new Date().getFullYear();
-	const siteConfig = useSiteConfig()
+	const siteConfig = useSiteConfig();
 </script>
 
 <footer class="bg-background-secondary flex h-16 items-center gap-2 border-t px-4">
