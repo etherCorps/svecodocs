@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import { page } from "$app/stores";
+	import { page } from "$app/state";
 	import type { Navigation, SidebarNavSection } from "$lib/types.js";
 	import type { Snippet } from "svelte";
 
@@ -73,7 +73,7 @@
 	<Sidebar.Menu>
 		{#each section.items as subItem (subItem.title)}
 			<Sidebar.MenuItem>
-				{@const isActive = subItem.href === $page.url.pathname}
+				{@const isActive = subItem.href === page.url.pathname}
 				<Sidebar.MenuButton {isActive}>
 					{#snippet child({ props })}
 						<a href={subItem.href} {...props}>{subItem.title}</a>
