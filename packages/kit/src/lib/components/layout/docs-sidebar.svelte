@@ -34,7 +34,7 @@
 						<Sidebar.MenuItem>
 							<Sidebar.MenuButton
 								class="h-9 gap-2 font-medium"
-								isActive={anchor.href === $page.url.pathname}
+								isActive={anchor.href === page.url.pathname}
 							>
 								{#snippet child({ props })}
 									<a
