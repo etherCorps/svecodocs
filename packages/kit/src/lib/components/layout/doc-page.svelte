@@ -52,6 +52,6 @@
 			<PageComponent {...componentProps} />
 			<ContributorSection {contributors} />
 		</div>
-		<NavigationNeighborButtons {navigationNeighbors} />
+		<NavigationNeighborButtons {...navigationNeighbors} />
 	</main>
 </div>
